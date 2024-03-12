@@ -36,4 +36,5 @@ KidKinder, ebeveynlere çocuklarını istedikleri sınıfa kaydettirebilecekleri
 ![Ekran görüntüsü 2024-03-12 234306](https://github.com/duygusahan/KidKinder/assets/103382151/877ce4a1-56a8-4d26-93e3-faa97424b74d)
 ![Ekran görüntüsü 2024-03-12 234321](https://github.com/duygusahan/KidKinder/assets/103382151/1c541762-f276-422c-b398-3641359d139a)
 ![Ekran görüntüsü 2024-03-12 234347](https://github.com/duygusahan/KidKinder/assets/103382151/b047c369-e66b-43cd-aa65-fca6c83310d6)
+![Ekran görüntüsü 2024-03-13 005902](https://github.com/duygusahan/KidKinder/assets/103382151/9669c74f-4a2c-4368-9982-81b7b7d94647)
 
