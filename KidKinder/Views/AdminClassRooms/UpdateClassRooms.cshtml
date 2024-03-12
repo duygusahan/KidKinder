@@ -1,0 +1,68 @@
+﻿@model KidKinder.Entities.ClassRoom
+@{
+    ViewBag.Title = "UpdateClassRooms";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Veli Bilgileri</h5>
+                <span>Siniflar ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+            </div>
+            <div class="card-block">
+                <form method="post">
+                    <input type="hidden" value="@Model.ClassRoomId" name="ClassRoomId" />
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Sınıf Adı</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" value="@Model.Title" placeholder="Sınıf">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Açıklama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Description" value="@Model.Description" placeholder="Açıklama">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Yaş Grupları</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="AgeofKids" value="@Model.AgeofKids" placeholder="Yaş Aralığı">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Kontenjan</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="TotalSeat" value="@Model.TotalSeat" placeholder="Mevcut">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Ders Saatleri</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ClassTime" value="@Model.ClassTime" placeholder="Ders Saati">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Ücretler</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Price" value="@Model.Price" placeholder="Ücret">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Resim</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" placeholder="Resim Url i ">
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-outline-primary">Sınıf Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

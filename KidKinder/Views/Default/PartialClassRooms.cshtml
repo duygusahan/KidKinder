@@ -1,0 +1,59 @@
+﻿﻿@model List<KidKinder.Entities.ClassRoom>
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5">
+                <span class="px-2">Popüler Eğitim Sınıflarımız</span>
+            </p>
+            <h1 class="mb-4">Çocuğunuz İçin Grubu Seçin</h1>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" src="@item.ImageUrl" alt="" />
+                        <div class="card-body text-center">
+                            <h4 class="card-title">@item.Title</h4>
+                            <p class="card-text">
+                                @item.Description
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Yaş Aralığı</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.AgeofKids</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Kontenjan</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.TotalSeat</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Ders Saatleri</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.ClassTime</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Fiyat</strong>
+                                </div>
+                                <div class="col-6 py-1">₺ @item.Price / Aylık</div>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Şimdi Kaydol</a>
+                    </div>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+</div>

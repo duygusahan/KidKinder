@@ -1,0 +1,23 @@
+﻿﻿@model List<KidKinder.Entities.Service>
+
+<div class="container-fluid pt-5">
+    <div class="container pb-3">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 pb-1">
+                    <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
+                         style="padding: 30px">
+                        <i class="@item.IconUrl"></i>
+                        <div class="pl-4">
+                            <h4>@item.Title</h4>
+                            <p class="m-0">
+                                @item.Desciription
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

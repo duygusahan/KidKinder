@@ -1,0 +1,73 @@
+﻿@model List<KidKinder.Entities.Staff>
+@{
+    ViewBag.Title = "StaffList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Personel Listemiz</h5>
+                        <span>Personellerimiz ile ilgili eklme/silme/güncelleme işlemlerini yapabileceğiniz alandır.</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Departman</th>
+                                        <th>Maaş</th>
+                                        <th>Resim</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.StaffId</td>
+                                            <td>@item.NameSurname</td>
+                                            <td>@item.StaffBranch.StaffBranchName<td>
+                                            <td>@item.Price</td>
+                                            
+                                            <td>
+                                                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; display: inline-block;">
+                                                    <img src="@item.ImageUrl" alt="Personel Resmi" style="width: 100%; height: auto; display: block;" />
+                                                </div>
+                                            </td>
+
+
+                                            <td><a href="/AdminStaff/DeleteStaff/@item.StaffId" class="btn btn-danger" style="border-radius: 20px;">   Sil  </a></td>
+                                            <td><a href="/AdminStaff/UpdateStaff/@item.StaffId" class="btn btn-success" style="border-radius: 20px;">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/AdminStaff/CreateStaff/" class="btn btn-primary">Yeni Personel Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

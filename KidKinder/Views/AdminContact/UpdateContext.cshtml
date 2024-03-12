@@ -1,0 +1,62 @@
+﻿@model KidKinder.Entities.Contact
+@{
+    ViewBag.Title = "UpdateContext";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Mesaj Detayları</h5>
+                        <span>Mesaj ile ilgili detaylara buradan ulaşabilirsiniz</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="container">
+                            <form method="post">
+                                <input type="hidden" value="@Model.ContactId" name="ContactId" />
+                                <input type="hidden" value="@Model.Email" name="Email" />
+                                <input type="hidden" value="@Model.Message" name="Message" />
+                                <input type="hidden" value="@Model.NameSurname" name="NameSurname" />
+                                <input type="hidden" value="@Model.SendDate" name="SendDate" />
+                                <input type="hidden" value="@Model.Subject" name="Subject" />
+                           
+                            <div class="form-group">
+                                <label for="status">Okundu Durumu:</label><br />
+                                <label class="radio-inline">
+                                    <input type="radio" name="IsRead" value="true" @(Model.IsRead ? "checked" : "") /> Okundu
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="IsRead" value="false" @(Model.IsRead ? "" : "checked") /> Okunmadı
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-success" style="border-radius: 20px;">Güncelle</button>
+                            </form>
+
+                            <br />
+
+                            <br />
+                            <a href="/AdminContact/ContactList/" class="btn btn-primary" style="border-radius: 20px;">Mesajlara Geri Dön</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

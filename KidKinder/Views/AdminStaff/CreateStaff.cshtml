@@ -1,0 +1,51 @@
+﻿@model KidKinder.Entities.Staff
+@{
+    ViewBag.Title = "CreateStaff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Personel Bilgileri</h5>
+                <span>Personel ekleme  işlemlemini aşağıdan gerçekleştirebilirsiniz.</span>
+            </div>
+            <div class="card-block">
+                <form method="post">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Personel Adı Soyadı</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="NameSurname" placeholder="Ad-Soyad">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Personel Departmanı</label>
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(x => x.StaffBranch, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Maaş</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Price" placeholder="Maaş">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Resim Bağlantı Adresi</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ImageUrl" placeholder="Resim">
+                        </div>
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-outline-primary">Personeli Kaydet</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

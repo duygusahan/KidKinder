@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "CreateGallery";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Galeri</h5>
+                <span>Yeni Resim ekleme işlemini aşağıdan gerçekleştirebilirsiniz.</span>
+            </div>
+            <div class="card-block">
+                <form method="post">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Görsel</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ImageUrl" placeholder="Görsel Url i">
+                        </div>
+                    </div>
+                   
+
+
+                    <button type="submit" class="btn btn-outline-primary">Görseli Kaydet</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

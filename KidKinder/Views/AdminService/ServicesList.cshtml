@@ -1,0 +1,62 @@
+﻿@model List<KidKinder.Entities.Service>
+@{
+    ViewBag.Title = "ServicesList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Hizmetler Listesi Tablosu</h5>
+                        <span>Hizmetler ile ilgili işlemleri yapabileceğiniz alandır.</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Hizmetler</th>
+                                        <th>Açıklama</th>
+                                        <th>Icon</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ServiceId</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.Desciription</td>
+                                            <td>@item.IconUrl</td>
+                                            <td><a href="/AdminService/DeleteService/@item.ServiceId" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/AdminService/UpdateService/@item.ServiceId" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/AdminService/CreateService/" class="btn btn-primary">Yeni Hizmet Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

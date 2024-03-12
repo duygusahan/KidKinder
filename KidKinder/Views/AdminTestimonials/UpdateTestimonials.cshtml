@@ -1,0 +1,49 @@
+﻿@model KidKinder.Entities.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonials";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Veli Bilgileri</h5>
+                <span>Siniflar ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+            </div>
+            <div class="card-block">
+                <form method="post">
+                    <input type="hidden" value="@Model.TestimonialId" name="TestimonialId" />
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Referans Adı</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" value="@Model.NameSurname" placeholder="NameSurname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Meslek</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" value="@Model.Title" placeholder="Meslek">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Yorum</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Comment" value="@Model.Comment" placeholder="Yorum">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Resim</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" placeholder="Resim Bağlantısı">
+                        </div>
+                    </div>
+                   
+
+
+                    <button type="submit" class="btn btn-outline-primary">Referans Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

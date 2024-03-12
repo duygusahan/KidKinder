@@ -1,0 +1,50 @@
+﻿@model KidKinder.Entities.Contact
+@{
+    ViewBag.Title = "GetContactDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Mesaj Detayları</h5>
+                        <span>Mesaj ile ilgili detaylara buradan ulaşabilirsiniz</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="container">
+
+                            <table class="table table-bordered table-striped table-hover">
+                                <tbody>
+                                    <tr>
+                                            
+                                    <tr>
+                                        <th scope="row" class="col-sm-3">@Model.Email</th>
+                                        <td class="col-sm-9">@Model.Message</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br />
+                            <a href="/AdminContact/ContactList/" class="btn btn-primary" style="border-radius: 20px;">Mesajlara Geri Dön</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

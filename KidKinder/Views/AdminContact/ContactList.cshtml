@@ -1,0 +1,87 @@
+﻿@model List<KidKinder.Entities.Contact>
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{ var status = "";}
+@{ var statuscolor = "";}
+
+<div class="pcoded-inner-content">
+
+    <div class="main-body">
+        <div class="page-wrapper">
+
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Mesajlar</h5>
+                        <span>Gelen Mesajlarımızın işlemlerini gerçekleştireceğimiz alandır.</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ad Soyad</th>
+                                        <th>Email</th>
+                                        <th>Konu</th>
+                                        <th>Mesaj</th>
+                                        <th>Gönderilme Tarihi</th>
+                                        <th>Okundu Bilgisi</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                        <th>Detaylar</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    @foreach (var item in Model)
+                                    {
+                                        if (item.IsRead == true)
+                                        {
+                                            status = "Okundu";
+                                            statuscolor = "text-success";
+                                        }
+                                        else
+                                        {
+                                            status = "Okunmadı";
+                                            statuscolor = "text-danger";
+                                        }
+
+                                        <tr>
+                                            <td>@item.ContactId</td>
+                                            <td>@item.NameSurname</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Subject</td>
+                                            <td>@item.Message.Substring(0, Math.Min(20, item.Message.Length))...</td>
+                                            <td>@item.SendDate.ToString("dd.MM.yyyy")</td>
+                                            <td><span class="@statuscolor">@status</span></td>
+
+                                            <td><a href="/AdminContact/#/@item.ContactId" class="btn btn-danger" style="border-radius: 20px;">   Sil  </a></td>
+                                            <td><a href="/AdminContact/UpdateContext/@item.ContactId" class="btn btn-success" style="border-radius: 20px;">Güncelle</a></td>
+                                            <td><a href="/AdminContact/GetContactDetails/@item.ContactId" class="btn btn-outline-primary" style="border-radius: 20px;">Detay</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

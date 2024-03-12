@@ -1,0 +1,36 @@
+﻿@model KidKinder.Entities.Student
+@{
+    ViewBag.Title = "UpdateStudent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Öğrenci Bilgileri</h5>
+                <span>Öğrenciler ile ilgili ekleme, silme, güncelle gibi işlemleri aşağıdan gerçekleştirebilirsiniz.</span>
+            </div>
+            <div class="card-block">
+                <form method="post">
+                    <input type="hidden" value="@Model.StudentId" name="StudentId" />
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Öğrenci Adı Soyadı</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="NameSurname" value="@Model.NameSurname" placeholder="Ad Soyad">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Resim</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="ImageUrl" value="@Model.ImageUrl" placeholder="Resim Url sini buraya kopyalayın">
+                        </div>
+                    </div>
+
+                    
+                    <button type="submit" class="btn btn-outline-primary">Öğrenci Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
